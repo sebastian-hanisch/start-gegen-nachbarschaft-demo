@@ -107,6 +107,7 @@ def test_same_seed_same_result_and_a_different_seed_differs():
 
 
 def test_more_moves_are_on_average_not_worse():
+    # nur diese vier Paare an acht Instanzen mit n = 25 und Zufallsstart; allgemein gilt es nicht (README: aus der Zufallsfolge + Split ist „alle drei Züge“ bei n = 25 schlechter als „Verschieben + Tauschen“)
     totals = {nk: 0.0 for nk in C.NEIGH_KEYS}
     for seed in range(8):
         inst = make_instance(25, 1, seed % 2, 3, seed + 40, 90)

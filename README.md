@@ -22,7 +22,7 @@ Wie in den Stücken 1 bis 11: ein Depot, n Kunden mit ganzzahliger Nachfrage, gl
 
 ## Befunde (gemessen, keine Behauptungen)
 
-**1. Der Startplan zählt immer.** Mittleres Bedauern nach der Lokalsuche mit allen Zügen, feste Instanzen:
+**1. Der Startplan zählt in diesen Messungen deutlich, bei n = 12 weniger.** Mittleres Bedauern nach der Lokalsuche mit allen Zügen, feste Instanzen:
 
 | Startplan (Lokalsuche mit allen Zügen) | n = 12 | 25 | 50 | 100 |
 |---|---|---|---|---|
@@ -35,9 +35,9 @@ Wie in den Stücken 1 bis 11: ein Depot, n Kunden mit ganzzahliger Nachfrage, gl
 | Bestes von 5 Zufallsstarts, je mit allen Zügen | 0,4 % | 3,6 % | 10,2 % | 14,3 % |
 | Bestes von 20 Zufallsstarts, je mit allen Zügen | 0,0 % | 0,3 % | 6,8 % | 12,5 % |
 
-Die Startpläne liegen bei allen Zügen um 4,5 / 16,2 / 17,0 / 11,6 Prozentpunkte auseinander (n = 12 / 25 / 50 / 100). Savings mit nur 2-opt (7,3 % bei n = 100) ist besser als die Zufallsfolge mit allen Zügen (15,2 %).
+Die Startpläne liegen bei allen Zügen um 4,5 / 16,2 / 17,0 / 11,6 Prozentpunkte auseinander (n = 12 / 25 / 50 / 100). Savings mit nur 2-opt (7,3 % bei n = 100) ist besser als die Zufallsfolge mit allen Zügen (15,2 %). Pro Instanz und pro Größe ist der Startplan weniger eindeutig: bei n = 12 ist Savings + Rundreise gegen die Zufallsfolge + Split nur in 9 von 20 Instanzen besser (9 / 6 / 5, Tabelle unter Befund 3), und das beste von 20 Zufallsstarts (0,0 % und 0,3 % bei n = 12 und 25) liegt vor allen Konstruktionen; bei kleinen Instanzen lässt sich der Startplan also durch Mehrfachstarts ersetzen (Befund 4).
 
-**2. Die Nachbarschaft zählt beim schlechten Start, kaum beim guten.**
+**2. Die Nachbarschaft zählt beim schlechten Start; beim guten ändert sie das Bedauern um höchstens 1,1 Prozentpunkte.**
 
 | Nachbarschaft (Start: Zufallsfolge + Split) | n = 12 | 25 | 50 | 100 |
 |---|---|---|---|---|
@@ -64,14 +64,16 @@ Die Startpläne liegen bei allen Zügen um 4,5 / 16,2 / 17,0 / 11,6 Prozentpunkt
 | Nachbarschaften aus Savings + Rundreise | 0,5 | 1,0 | 1,1 | 0,5 |
 | Nachbarschaften aus dem besten von 9 λ + Rundreise | 0,5 | 0,2 | 0,4 | 0,5 |
 
-**3. Die Lokalsuche holt von einem guten Start wenig heraus.** Startplan → nach der Lokalsuche mit allen Zügen (mittleres Bedauern): n = 12: Savings λ = 1 2,6 % → 2,0 %, Bestes von 9 λ + Rundreise 1,4 % → 0,9 %, Zufallsfolge + Split 47,6 % → 3,9 %; n = 25: Savings λ = 1 3,9 % → 2,2 %, Bestes von 9 λ + Rundreise 1,5 % → 1,3 %, Zufallsfolge + Split 123,1 % → 17,4 %; n = 50: Savings λ = 1 7,2 % → 4,6 %, Bestes von 9 λ + Rundreise 2,7 % → 2,2 %, Zufallsfolge + Split 249,2 % → 19,3 %; n = 100: Savings λ = 1 8,9 % → 6,2 %, Bestes von 9 λ + Rundreise 4,1 % → 3,6 %, Zufallsfolge + Split 427,9 % → 15,2 %. Aus der Zufallsfolge fällt das Bedauern von 428 % auf 15,2 % (n = 100), aus dem besten von 9 λ mit Rundreise von 4,1 % auf 3,6 %.
+Die Spannweite der Nachbarschaften wird von den absichtlich schwachen Nachbarschaften (nur Tauschen, nur 2-opt) bestimmt: Zwischen den Nachbarschaften mit Verschieben unterscheidet sich Savings + Rundreise um höchstens 0,2 Prozentpunkte, die Zufallsfolge + Split bei n = 100 aber noch um bis zu 19 Prozentpunkte (15,2 bis 34,0 %). Bei n = 50 sind 1,1 Prozentpunkte ein Viertel des Bedauerns von Savings + Rundreise (4,2 bis 5,3 %).
+
+**3. Die Lokalsuche holt von einem guten Start absolut wenig heraus.** Startplan → nach der Lokalsuche mit allen Zügen (mittleres Bedauern): n = 12: Savings λ = 1 2,6 % → 2,0 %, Bestes von 9 λ + Rundreise 1,4 % → 0,9 %, Zufallsfolge + Split 47,6 % → 3,9 %; n = 25: Savings λ = 1 3,9 % → 2,2 %, Bestes von 9 λ + Rundreise 1,5 % → 1,3 %, Zufallsfolge + Split 123,1 % → 17,4 %; n = 50: Savings λ = 1 7,2 % → 4,6 %, Bestes von 9 λ + Rundreise 2,7 % → 2,2 %, Zufallsfolge + Split 249,2 % → 19,3 %; n = 100: Savings λ = 1 8,9 % → 6,2 %, Bestes von 9 λ + Rundreise 4,1 % → 3,6 %, Zufallsfolge + Split 427,9 % → 15,2 %. Aus der Zufallsfolge fällt das Bedauern von 428 % auf 15,2 % (n = 100), aus dem besten von 9 λ mit Rundreise von 4,1 % auf 3,6 %. Der Gewinn ist beim besten von 9 λ mit Rundreise 0,2 bis 0,5 Prozentpunkte, bei Savings λ = 1 0,6 bis 2,7; für Savings λ = 1 sind das 23 / 44 / 36 / 30 % seines Bedauerns (n = 12 / 25 / 50 / 100), relativ also nicht wenig.
 
 | Gepaart, alle Züge: billiger / gleich / teurer | n = 12 | 25 | 50 | 100 |
 |---|---|---|---|---|
 | Bestes von 9 λ + Rundreise gegen Zufallsfolge + Split | 12 / 6 / 2 | 15 / 0 / 1 | 15 / 0 / 1 | 8 / 0 / 0 |
 | Savings λ = 1 + Rundreise gegen Zufallsfolge + Split | 9 / 6 / 5 | 15 / 0 / 1 | 15 / 0 / 1 | 7 / 0 / 1 |
 
-**4. Mehrfachstarts holen die Konstruktionen nur bei kleinen Instanzen ein.** Das beste von 20 Zufallsstarts liegt bei n = 12 und 25 bei 0,0 % und 0,3 % (Savings mit Lokalsuche 2,0 % und 2,2 %); bei n = 50 und 100 bleibt es mit 6,8 % und 12,5 % hinter Savings (4,6 % und 6,2 %) und hinter dem besten von 9 λ mit Rundreise (2,2 % und 3,6 %). Fünf Zufallsstarts reichen nirgends über n = 12 hinaus.
+**4. 20 Zufallsstarts holen die Konstruktionen nur bei kleinen Instanzen ein.** Das beste von 20 Zufallsstarts liegt bei n = 12 und 25 bei 0,0 % und 0,3 % (Savings mit Lokalsuche 2,0 % und 2,2 %); bei n = 50 und 100 bleibt es mit 6,8 % und 12,5 % hinter Savings (4,6 % und 6,2 %) und hinter dem besten von 9 λ mit Rundreise (2,2 % und 3,6 %). Fünf Zufallsstarts reichen nicht über n = 12 hinaus. Mit mehr als 20 Zufallsstarts wurde nicht gemessen.
 
 | Zeit (Median, einzeln gemessen) | n = 50: Bauen | Lokalsuche (alle Züge) | n = 100: Bauen | Lokalsuche (alle Züge) |
 |---|---|---|---|---|
@@ -102,14 +104,14 @@ Die Lokalsuche kostet Millisekunden; der Preis liegt im Startplan (bestes von 9 
 
 **Handinstanz** (Optimum 44,36): Der Zufallsstart (62,60) ist mit 2-opt allein ein lokales Optimum (kein Zug), mit allen Zügen findet die Lokalsuche das Optimum in 7 Zügen (alle Verschieben); die Zufallsfolge mit „Füllen bis voll“ (57,58) bleibt nach einem 2-opt-Zug bei 54,54 hängen. Aus Savings, Einfügen nach Split und der Rundreise-Variante startet die Lokalsuche schon im Optimum.
 
-**Hook des Fachkanons** („Die Startlösung zählt bei Lokalsuche weniger als die Nachbarschaft, analog zur Hill-Climbing-Demo; prüfen, ob das bei Kapazität anders ist“): bei Kapazität und mit Konstruktionen als Start **widerlegt**. Die Hill-Climbing-Aussage bleibt für den Zufallsstart wahr (aus der Zufallsfolge bei n = 25: nur 2-opt 54,5 %, alle Züge 17,4 %); sobald der Start eine Konstruktion ist, entscheidet der Start (2,1 % gegen 17,4 % bei n = 25).
+**Hook des Fachkanons** („Die Startlösung zählt bei Lokalsuche weniger als die Nachbarschaft, analog zur Hill-Climbing-Demo; prüfen, ob das bei Kapazität anders ist“): bei Kapazität und mit Konstruktionen als Start in diesen Messungen **nur für den Zufallsstart bestätigt**. Die Hill-Climbing-Aussage gilt für den Zufallsstart (aus der Zufallsfolge bei n = 25: nur 2-opt 54,5 %, alle Züge 17,4 %); ist der Start eine Konstruktion, liegen die Startpläne bei allen Zügen rund 1 bis 3 Prozentpunkte auseinander, die Nachbarschaften bei Savings + Rundreise und beim besten von 9 λ + Rundreise 0,2 bis 1,1: der Start zählt dort etwas mehr, aber nicht um ein Vielfaches. Der Vergleich 2,1 % gegen 17,4 % bei n = 25 stellt Savings + Rundreise der Zufallsfolge gegenüber, also einen guten Start einem Zufallsstart.
 
 ## Ehrliche Grenzen
 
 - **Eine einfache Lokalsuche:** erste Verbesserung mit 2-opt, Verschieben und Tauschen (acht nächste Nachbarn je Kunde); kein 2-opt-Stern, kein CROSS, keine Strafen für Unzulässigkeit, keine ILS-, VNS- oder Tabu-Schicht. Mit reicheren Nachbarschaften schrumpft der Abstand der Startpläne eventuell weiter.
 - **Eigene Instanzen:** Uchoa-artige Karten (zufällig oder in Gruppen, Depot in der Mitte oder in der Ecke), höchstens 100 Kunden, Kapazität über die Auslastung (90 %), drei Zielrouten; die X-Instanzen der Literatur sind nicht geladen.
 - **Ein Lauf je Start und Nachbarschaft:** die Konstruktionen sind deterministisch, die Zufallsstarts haben je Instanz feste Seeds; bei 100 Kunden gibt es nur 8 Instanzen, Mittelwerte tragen die Streuung der Instanz.
-- **Referenz und Bedauern:** das Bedauern misst gegen den besten Wert auf der Instanz (Referenz, Verfahren der Stücke 4 bis 11, alle Lokalsuchen, Zufallsstarts); die Referenz ist bis 12 Kunden das Optimum, darüber PyVRP (5 Sekunden, Seed 1) und keine Untergrenze.
+- **Referenz und Bedauern:** das Bedauern misst gegen den besten Wert auf der Instanz (Referenz, Verfahren der Stücke 4 bis 11, alle Lokalsuchen, Zufallsstarts); die Referenz ist bis 12 Kunden das Optimum, darüber PyVRP (5 Sekunden, Seed 1; bei frischen Instanzen der kleinere Wert von zwei Seeds) und keine Untergrenze.
 - **Zeiten sind Daten:** eine Einzelmessung auf einer Maschine in Python (Median über wenige Instanzen), keine Zeit wird in einem Test gemessen; Einfügen nach Split fehlt bei 100 Kunden (rund 40 s je Start).
 - **Mehrfachstarts:** je Instanz 20 feste Zufallsfolgen; „das Beste von k“ nimmt die ersten k. Das Ergebnis hängt an der Zahl der Starts und fällt bei kleinen Instanzen anders aus als bei großen.
 - **Keine Flottengrenze, keine Fenster:** die Zahl der Routen ist frei, es gibt nur die Kapazität.
@@ -126,7 +128,7 @@ Die Lokalsuche kostet Millisekunden; der Preis liegt im Startplan (bestes von 9 
 
 - **Handwerte:** 2-opt an einem Quadrat (10,4853 → 8,8284, Gewinn 4√2 − 4), die Handinstanz mit jedem Startplan und jeder Nachbarschaft, Verschieben und Tauschen an kleinen Plänen von Hand (`tests/test_ls.py`).
 - **Orakel:** jede Lokalsuche aus jedem Startplan auf kleinen Instanzen (n = 5 bis 7) gegen die Aufzählung aller Zerlegungen mit allen Rundreisen: vollständige, kapazitätsgerechte Pläne, gemessene Länge gleich den Kosten, nie länger als der Start, nie unter dem Optimum; aus dem Optimum bewegt sich die Lokalsuche nicht (`tests/test_oracle.py`).
-- **Eigenschaften:** nach der ersten Verbesserung ist der Plan ein lokales Optimum (ein zweiter Lauf findet keinen Zug); die Gewinne der Zugfolge ergeben genau Start minus Ende; gleicher Seed, gleiches Ergebnis; mehr erlaubte Züge sind im Mittel nie schlechter; Umnummerieren der Kunden ändert die Aussagen nicht (`tests/test_ls.py`).
+- **Eigenschaften:** nach der ersten Verbesserung ist der Plan ein lokales Optimum (ein zweiter Lauf findet keinen Zug); die Gewinne der Zugfolge ergeben genau Start minus Ende; gleicher Seed, gleiches Ergebnis; mehr erlaubte Züge sind im Mittel nicht schlechter, geprüft an vier Paaren und acht Instanzen mit 25 Kunden und Zufallsstart (allgemein gilt das nicht: aus der Zufallsfolge + Split ist bei n = 25 „alle drei Züge“ mit 17,4 % schlechter als „Verschieben + Tauschen“ mit 14,5 %); Umnummerieren der Kunden ändert die Aussagen nicht (`tests/test_ls.py`).
 - **Randfälle:** n = 1, 2, 3, ein Kunde je Route, Kapazität für alle, leere Zugmenge, Seed 0 (`tests/test_edge_cases.py`).
 - **Verdikte:** jede Verzweigung und jede Zahl im Text (`tests/test_verdicts.py`).
 - **Zahlen der README und der Preset-Hilfen:** `tests/test_claims.py`; die vorberechneten Bänder auf Aufbau, Vollständigkeit und gegen eine frische Rechnung von Stichproben, alle Startpläne und Nachbarschaften bitgleich (`tests/test_bands.py`). **Zeiten werden nie gemessen:** sie sind Daten der Bänder.
@@ -134,7 +136,7 @@ Die Lokalsuche kostet Millisekunden; der Preis liegt im Startplan (bestes von 9 
 
 ## Tests
 
-102 Tests. Laufzeit lokal etwa zwei Minuten.
+102 Tests. Laufzeit lokal rund anderthalb Minuten (hier gemessen: 88 Sekunden).
 
 ## Dateistruktur
 
@@ -148,7 +150,7 @@ Die Lokalsuche kostet Millisekunden; der Preis liegt im Startplan (bestes von 9 
 | `requirements-dev.txt` | Laufzeit plus pytest |
 | `requirements.txt` | Laufzeit-Bibliotheken (ungepinnt) |
 | `sgn_algorithm.py` | Kern aus Stück 1: Split, Hilfsgraph, exakter Löser |
-| `sgn_bands.json` | vorberechnete Bänder (76 Instanzzeilen mit 36 Lokalsuchen und 20 Zufallsstarts, Zeiten) |
+| `sgn_bands.json` | vorberechnete Bänder (76 Instanzzeilen mit 36 Lokalsuchen (30 bei den 8 Zeilen mit 100 Kunden, wo Einfügen nach Split fehlt) und 20 Zufallsstarts, Zeiten) |
 | `sgn_constants.py` | Regler-Grenzen, Startpläne, Nachbarschaften, Presets, Annahmentext |
 | `sgn_construct.py` | Einfügen nach Split |
 | `sgn_evaluation.py` | Live-Rechnung, Bänder, Kennzahlen, Verdikt-Logik |

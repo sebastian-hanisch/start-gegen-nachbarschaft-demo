@@ -75,7 +75,7 @@ st.markdown(
     """
 **Zählt der Startplan oder die Nachbarschaft?** Eine **Lokalsuche** verbessert einen Tourenplan Zug für Zug: **2-opt** kehrt ein Stück einer Route um, **Verschieben** setzt einen Kunden an eine bessere Stelle (auch in eine andere Route),
 **Tauschen** vertauscht zwei Kunden aus verschiedenen Routen. Die Demo startet sie aus zwei **Zufallsplänen** und vier **Konstruktionen** der Reihe (Einfügen nach Split, Savings, Savings mit Rundreise, bestes von 9 λ mit Rundreise)
-mit je sechs **Nachbarschaften** und misst den Abstand zum besten Wert. Die Hill-Climbing-Faustregel „die Nachbarschaft zählt mehr als der Start“ stimmt nur für schlechte Startpläne.
+mit je sechs **Nachbarschaften** und misst den Abstand zum besten Wert. Die Hill-Climbing-Faustregel „die Nachbarschaft zählt mehr als der Start“ stimmt in diesen Messungen nur für schlechte Startpläne.
 
 Weiter unten: **🔬 Eine Lokalsuche Zug für Zug**, **🔬 Start × Nachbarschaft**, **🔬 Wie viel holt die Lokalsuche heraus?**, **🔬 Mehrfachstart gegen guten Start**, **🚧 Wo die Annahmen enden**,
 der Expander **⚠️ Annahmen, Grenzen und bekannte Probleme** und der Expander **📐 Mathematische Formulierung**.

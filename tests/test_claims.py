@@ -129,8 +129,10 @@ def test_the_hand_instance_and_the_hook():
     assert (d(rs.start_cost, 2), len(rs.steps), d(rf.start_cost, 2), d(rf.final_cost, 2), d(ev.live_matrix(s).exact, 2)) == ("62,60", 7, "57,58", "54,54", "44,36")
     for text in ("(Optimum 44,36)", "Der Zufallsstart (62,60) ist mit 2-opt allein ein lokales Optimum (kein Zug)", "findet die Lokalsuche das Optimum in 7 Zügen (alle Verschieben)", "(57,58) bleibt nach einem 2-opt-Zug bei 54,54 hängen"):
         assert text in README, text
-    hook = (f"nur 2-opt {cellp(25, 'RS', '2opt')}, alle Züge {cellp(25, 'RS', 'alle')}); sobald der Start eine Konstruktion ist, entscheidet der Start ({cellp(25, 'SAVR', 'alle')} gegen {cellp(25, 'RS', 'alle')} bei n = 25)")
+    hook = (f"nur 2-opt {cellp(25, 'RS', '2opt')}, alle Züge {cellp(25, 'RS', 'alle')}); ist der Start eine Konstruktion")
     assert hook in README, hook
+    assert f"Der Vergleich {cellp(25, 'SAVR', 'alle')} gegen {cellp(25, 'RS', 'alle')} bei n = 25 stellt Savings + Rundreise der Zufallsfolge gegenüber" in README
+    assert "nur für den Zufallsstart bestätigt" in README and "widerlegt" not in README
 
 
 # --- Presets -----------------------------------------------------------------------------------------------------------------------------
